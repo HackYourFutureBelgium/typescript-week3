@@ -16,7 +16,7 @@ rl.on('line', (line: string) => {
         process.exit(0);        
     }
     
-    game.render();
+    game.render(line.trim());
 
     game.command(line.trim());
     
