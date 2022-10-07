@@ -15,11 +15,14 @@ rl.on('line', (line: string) => {
     if (line.toLowerCase() === "exit") {
         process.exit(0);        
     }
-    
+
+    game.loop([{
+        action: 'human_move',
+        cellNumber: parseInt(line.trim())
+    }]);
     game.render();
 
-    game.command(line.trim());
-    
+
     rl.prompt();
 }).on('close', () => {
     console.log('Bye!');
